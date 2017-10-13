@@ -1,0 +1,52 @@
+<scene previous_export_time="1448862806.338915" formatVersion="1.0.1" export_time="1449052779.294805" exported_by="Grant Dennison" >
+  <nodes >
+    <node name="tree" >
+      <position z="-0.000000" y="0.000000" x="0.000000" />
+      <rotation qy="0.000000" qw="1.000000" qx="0.000000" qz="-0.000000" />
+      <scale z="1.000000" y="1.000000" x="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity anisotropic_friction="False" actor="False" inertia_tensor="0.4000000059604645" velocity_min="0.0" meshFile="FullOak.mesh" lock_trans_y="False" lock_trans_z="False" friction_y="1.0" lock_rot_y="False" lock_rot_x="False" physics_type="STATIC" velocity_max="0.0" name="FullOak" lock_trans_x="False" mass_radius="1.0" mass="1.0" ghost="False" friction_x="1.0" friction_z="1.0" damping_rot="0.10000000149011612" lock_rot_z="False" damping_trans="0.03999999910593033" />
+    </node>
+    <node name="Lamp" >
+      <position z="-0.328622" y="30.264809" x="1.030629" />
+      <rotation qy="0.755880" qw="0.570947" qx="0.169076" qz="-0.272171" />
+      <scale z="1.000000" y="1.000000" x="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <light type="point" shadow="true" powerScale="1.0" name="Lamp" >
+        <position z="-0.328622" y="30.264809" x="1.030629" />
+        <lightAttenuation constant="1.0" linear="0.03333335240683057" range="5000" quadratic="0.0" />
+        <colourDiffuse g="1.0" r="1.0" b="1.0" />
+        <colourSpecular g="1.0" r="1.0" b="1.0" />
+        <colourShadow g="1.0" r="1.0" b="1.0" />
+      </light>
+    </node>
+    <node name="Camera" >
+      <position z="6.507640" y="11.410031" x="16.011347" />
+      <rotation qy="0.334251" qw="0.781600" qx="0.481707" qz="-0.212922" />
+      <scale z="1.000000" y="1.000000" x="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <camera fov="0.5033799435163735" projectionType="perspective" name="Camera" >
+        <clipping far="100.0" farPlaneDist="100.0" nearPlaneDist="0.10000000149011612" near="0.10000000149011612" />
+      </camera>
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="C:\Users\Grant Dennison\Desktop\Code\Cedarville\Computer Graphics\CedarKart\assets\Models\objects\trees\WinterTrees\FullOak\FullOakTrunk.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourAmbient g="0.0" r="0.0" b="0.0" />
+    <colourBackground g="0.05087608844041824" r="0.05087608844041824" b="0.05087608844041824" />
+    <colourDiffuse g="0.05087608844041824" r="0.05087608844041824" b="0.05087608844041824" />
+  </environment>
+</scene>
