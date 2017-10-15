@@ -283,7 +283,7 @@
 "APP", "buildings/apple/apple", 77f, 9.0f, 123f, 6.10f, 0f, 0.9957f, 0f, -0.0925f
 "LB", "buildings/library/library", 26f, 3.6f, 123f, 0.65f, 0f, -0.6910f, 0f, 0.7229f
 "X", "buildings/btsstairs/btsStairs", 51f, -0.6f, 95.4f, 2.50f, 0f, -0.6372f, 0f, 0.7707f
-"BRO", "buildings/brock/brock", 31f, 18.8f, -88f, 1.50f, 0f, 0.0810f, 0f, 0.9967f
+"BRO", "buildings/brock/brock", 31f, 18.8f, -88f, 1.50f, -0.705f, 0.057f, 0.057f, 0.705f
 "DFH", "buildings/callan/callan", -36f, 10.2f, 5f, 23f, 0f, -0.0853f, 0f, 0.9964f
 "FH", "buildings/founders/founders", 92.1f, 16.5f, 187.0f, 1.03f, 0f, 0.0086f, 0f, 1f
 "LAW", "buildings/lawlorPrinty/lawlorPrinty", 66f, 11.7f, 7f, 0.55f, 0f, 0.9956f, 0f, -0.0935f

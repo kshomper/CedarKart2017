@@ -24,6 +24,7 @@ public class Instantiate : MonoBehaviour
             Match m = r.Match(holder);
             if (!m.Success)
             {
+                Debug.Log("Broke on regex match: " + holder);
                 continue;
             }
 
@@ -34,6 +35,7 @@ public class Instantiate : MonoBehaviour
             GameObject prefab = Resources.Load(path) as GameObject;
             if (prefab == null)
             {
+                Debug.Log("Broke on path load: " + path);
                 continue;
             }
             GameObject placedThing = Instantiate(prefab);
