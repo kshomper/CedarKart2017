@@ -1,0 +1,14 @@
+# Format is:
+# name, path, locationX, locationY, locationZ, scale, rotationX, rotationY, rotationZ, rotationW
+# (Rotations are in Quaternion)
+
+#Buildings
+"Brock", "buildings/brock/brock_origin", -63.8f, 0f, -195.9f, 267.08f, -0.704f, -0.067f, -0.067f, 0.704f
+"Apple", "buildings/apple/apple_origin", -153.8f, 0f, 200.1f, 1164.50f, 0.064f, -0.704f, -0.704f, -0.064f
+"BTS", "buildings/bts/bts_origin", -105.4f, -2.5f, 158f, 4.66175f, -0.541f, 0.455f, 0.455f, 0.541f
+"BTS Stairs", "buildings/btsstairs/btsStairs_origin", -88.04f, -9.06f, 137.89f, 555.1445f, -0.541f, 0.455f, 0.455f, 0.541f
+"Callan", "buildings/callan/callan_origin", 67.7f, 0f, -26.2f, 4710.02f, -0.706f, 0.045f, 0.045f, 0.706f
+"DMC", "buildings/dmc/dmc_origin", -37.5f, 0f, 73.1f, 2.008496f, -0.706f, 0.040f, 0.040f, 0.706f
+"ENS", "buildings/ens/ens_origin", 1.4f, -5.4f, 281.3f, 7.55254f, -0.703f, -0.080f, -0.080f, 0.703f
+# 	Founders may not be in the right spot - JR
+"Founders", "buildings/founders/founders_origin", -179.7f, 0f, 327.8f, 2.417082f, -0.705f, -0.057f, -0.057f, 0.705f
