@@ -12,7 +12,7 @@
 "ENS", "buildings/ens/ens_origin", 1.4f, -5.4f, 281.3f, 7.55254f, -0.703f, -0.080f, -0.080f, 0.703f
 # 	Founders may not be in the right spot - JR
 "Founders", "buildings/founders/founders_origin", -179.7f, 0f, 327.8f, 2.417082f, -0.705f, -0.057f, -0.057f, 0.705f
-#"Lawlor"
+"Lawlor", "buildings/lawlorPrinty/NewLawlorPrinty", -132f, 0f, -23.5f, 96f, 0f, 0.995f, 0f, 0.098f
 #"Printy"
 "Library", "buildings/library/library_origin", -57.7f, 0f, 206.3f, 1.2465f, 0f, 0.633f, 0f, 0.744f
 "Maddox", "buildings/maddox/maddox_origin", -154.6179f, 0f, 104.0856f, 211.541f, -0.704f, -0.070f, -0.070f, 0.704f
