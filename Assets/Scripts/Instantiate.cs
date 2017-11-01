@@ -19,7 +19,7 @@ public class Instantiate : MonoBehaviour
             string[] placement = holder.Split(',');
 
             // name, path, locationX, locationY, locationZ, scale, rotationX, rotationY, rotationZ, rotationW
-            string pat = "\"?([^\"]+)\"?, ?\"?([^\"]+)\"?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?";
+            string pat = "\"?([^\"]+)\"?, ?\"?([^\"]+)\"?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?";
             Regex r = new Regex(pat, RegexOptions.IgnoreCase);
             Match m = r.Match(holder);
             if (!m.Success)
@@ -53,8 +53,7 @@ public class Instantiate : MonoBehaviour
             float qx = float.Parse(g[7].Value);
             float qy = float.Parse(g[8].Value);
             float qz = float.Parse(g[9].Value);
-            float qw = float.Parse(g[10].Value);
-            Quaternion rotation = new Quaternion(qx, qy, qz, qw);
+            Quaternion rotation = Quaternion.Euler(qx, qy, qz);
 
             placedThing.transform.position = location;
             placedThing.transform.localScale = scale;

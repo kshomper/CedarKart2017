@@ -1,21 +1,21 @@
 # Format is:
-# name, path, locationX, locationY, locationZ, scale, rotationX, rotationY, rotationZ, rotationW
+# name, path, locationX, locationY, locationZ, scale, rotationX, rotationY, rotationZ
 # (Rotations are in Quaternion)
 
 #Buildings
-"Brock", "buildings/brock/brock_origin", -63.8f, 0f, -195.9f, 267.08f, -0.704f, -0.067f, -0.067f, 0.704f
-"Apple", "buildings/apple/apple_origin", -153.8f, 0f, 200.1f, 1164.50f, 0.064f, -0.704f, -0.704f, -0.064f
-"BTS", "buildings/bts/bts_origin", -105.4f, -2.5f, 158f, 4.66175f, -0.541f, 0.455f, 0.455f, 0.541f
-"BTS Stairs", "buildings/btsstairs/btsStairs_origin", -88.04f, -9.06f, 137.89f, 555.1445f, -0.541f, 0.455f, 0.455f, 0.541f
-"Callan", "buildings/callan/callan_origin", 67.7f, 0f, -26.2f, 4710.02f, -0.706f, 0.045f, 0.045f, 0.706f
-"DMC", "buildings/dmc/dmc_origin", -26.84386f, 9.6617f, -76.51608f, 1.029113f, -0.031f, -0.706f, -0.706f, 0.031f
-"ENS", "buildings/ens/ens_origin", 1.4f, -5.4f, 281.3f, 7.55254f, -0.703f, -0.080f, -0.080f, 0.703f
+"Brock", "buildings/brock/brock_origin", -9.724312, 9.53, 66.29623, 139.03, -90.00001, 0, 165.787
+"Apple", "buildings/apple/apple_origin", 
+"BTS", "buildings/bts/bts_origin", -105.4, -2.5, 158, 4.66175, 
+"BTS Stairs", "buildings/btsstairs/btsStairs_origin", -88.04, -9.06, 137.89, 555.1445, 
+"Callan", "buildings/callan/callan_origin", 67.7, 0, -26.2, 4710.02, 
+"DMC", "buildings/dmc/dmc_origin", -25.72, 9.4234, -77.11, 105.4142, -90.00001, 0, 188.459 
+"ENS", "buildings/ens/ens_origin", 1.4, -5.4, 281.3, 7.55254, -
 # 	Founders may not be in the right spot - JR
-"Founders", "buildings/founders/founders_origin", -179.7f, 0f, 327.8f, 2.417082f, -0.705f, -0.057f, -0.057f, 0.705f
-"Lawlor", "buildings/lawlorPrinty/NewLawlorPrinty", -132f, 0f, -23.5f, 96f, 0f, 0.995f, 0f, 0.098f
+"Founders", "buildings/founders/founders_origin", -179.7, 0, 327.8, 2.417082, 
+"Lawlor", "buildings/lawlorPrinty/NewLawlorPrinty", -132, 0, -23.5, 96, 
 #"Printy"
-"Library", "buildings/library/library_origin", -11.7f, 6.4f, -143.3f, 0.672366f, 0f, -0.781f, 0f, 0.624f
-"Maddox", "buildings/maddox/maddox_origin", -154.6179f, 0f, 104.0856f, 211.541f, -0.704f, -0.070f, -0.070f, 0.704f
-"McChesney", "buildings/mcchesney/mcchesney_origin", -28.1f, 0f, -95.8f, 822.813f, -0.704f, -0.069f, -0.069f, 0.704f
-"Johnson", "buildings/mcchesney/mcchesney_origin", 10.4f, 0f, -166.4f, 822.813f, -0.704f, -0.069f, -0.069f, 0.704f
-"HSC_old", "buildings/pharmacy/PHbuildingbake_origin", 120.7f, 0f, 248.8f, 3.823278f, 0f, -0.933f, 0f, 0.360f
+"Library", "buildings/library/library_origin", -11.98, 6.29, -143.56, 68.21909, -90, 0, -102.51
+"Maddox", "buildings/maddox/maddox_origin", -154.6179, 0, 104.0856, 211.541, 
+"McChesney", "buildings/mcchesney/mcchesney_origin", -28.1, 0, -95.8, 822.813, 
+"Johnson", "buildings/mcchesney/mcchesney_origin", 10.4, 0, -166.4, 822.813, 
+"HSC_old", "buildings/pharmacy/PHbuildingbake_origin", 120.7, 0, 248.8, 3.823278, 

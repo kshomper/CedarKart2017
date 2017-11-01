@@ -17,7 +17,9 @@ ModelImporter:
     400008: //RootNode
     2000000: Camera
     2300000: Library
+    2300002: //RootNode
     3300000: Library
+    3300002: //RootNode
     4300000: Library
     10800000: Hemi
     10800002: Lamp
