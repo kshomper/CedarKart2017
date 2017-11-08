@@ -87,6 +87,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CedarKart.Plugins.csproj">
+      <Project>{4DAA6D4E-1137-8F52-5CC5-BBA740A1DB51}</Project>
+      <Name>CedarKart.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\Instantiate.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +158,7 @@
     <None Include="Assets\Resources\people\jacket\jacket.mesh.xml" />
     <None Include="Assets\Resources\people\jacket\jacket.skeleton.xml" />
     <None Include="Assets\Resources\placement.txt" />
+    <None Include="Assets\Resources\placementOrigin.txt" />
     <None Include="Assets\Resources\placementZero.txt" />
     <None Include="Assets\Resources\vehicles\car_blue\car.mesh.xml" />
     <None Include="Assets\Resources\vehicles\car_red\car.mesh.xml" />
@@ -165,6 +172,11 @@
     <None Include="Assets\Resources\vehicles\van_red\van.mesh.xml" />
     <None Include="Assets\Resources\vehicles\van_silver\van.mesh.xml" />
     <None Include="Assets\Resources\vehicles\van_yellow\van.mesh.xml" />
+    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

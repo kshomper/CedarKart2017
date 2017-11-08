@@ -1,0 +1,21 @@
+# Format is:
+# name, path, locationX, locationY, locationZ, scale, rotationX, rotationY, rotationZ
+# (Rotations are in Quaternion)
+
+#Buildings
+"Brock", "buildings/brock/brock_origin", -9.724312, 9.53, 66.29623, 139.03, -90.00001, 0, 165.787
+"Apple", "buildings/apple/apple_origin", 
+"BTS", "buildings/bts/bts_origin", -105.4, -2.5, 158, 4.66175, 
+"BTS Stairs", "buildings/btsstairs/btsStairs_origin", -88.04, -9.06, 137.89, 555.1445, 
+"Callan", "buildings/callan/callan_origin", 67.7, 0, -26.2, 4710.02, 
+"DMC", "buildings/dmc/dmc_origin", -25.72, 9.4234, -77.11, 105.4142, -90.00001, 0, 188.459 
+"ENS", "buildings/ens/ens_origin", 1.4, -5.4, 281.3, 7.55254, -
+# 	Founders may not be in the right spot - JR
+"Founders", "buildings/founders/founders_origin", -179.7, 0, 327.8, 2.417082, 
+"Lawlor", "buildings/lawlorPrinty/NewLawlorPrinty", -132, 0, -23.5, 96, 
+#"Printy"
+"Library", "buildings/library/library_origin", -11.98, 6.29, -143.56, 68.21909, -90, 0, -102.51
+"Maddox", "buildings/maddox/maddox_origin", -154.6179, 0, 104.0856, 211.541, 
+"McChesney", "buildings/mcchesney/mcchesney_origin", -28.1, 0, -95.8, 822.813, 
+"Johnson", "buildings/mcchesney/mcchesney_origin", 10.4, 0, -166.4, 822.813, 
+"HSC_old", "buildings/pharmacy/PHbuildingbake_origin", 120.7, 0, 248.8, 3.823278, 

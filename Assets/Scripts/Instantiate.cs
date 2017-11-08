@@ -12,14 +12,14 @@ public class Instantiate : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        string[] placementFile = File.ReadAllLines("Assets/Resources/placement.txt");
+        string[] placementFile = File.ReadAllLines("Assets/Resources/placementOrigin.txt");
         for (int i = 0; i < placementFile.Length; i++)
         {
             string holder = placementFile[i];
             string[] placement = holder.Split(',');
 
             // name, path, locationX, locationY, locationZ, scale, rotationX, rotationY, rotationZ, rotationW
-            string pat = "\"?([^\"]+)\"?, ?\"?([^\"]+)\"?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?, ?([0-9.-]+)f?";
+            string pat = "\"?([^\"]+)\"?, ?\"?([^\"]+)\"?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?";
             Regex r = new Regex(pat, RegexOptions.IgnoreCase);
             Match m = r.Match(holder);
             if (!m.Success)
@@ -42,19 +42,18 @@ public class Instantiate : MonoBehaviour
 
             placedThing.name = name;
 
-            float x = float.Parse(g[3].Value) * -2.0f;
+            float x = float.Parse(g[3].Value) ;//* -2.0f;
             float y = float.Parse(g[4].Value);
-            float z = float.Parse(g[5].Value) * 2.0f;
+            float z = float.Parse(g[5].Value);// * 2.0f;
             Vector3 location = new Vector3(x, y, z);
 
-            float s = float.Parse(g[6].Value) * 1.75f;
+            float s = float.Parse(g[6].Value);// * 1.75f;
             Vector3 scale = new Vector3(s, s, s);
 
             float qx = float.Parse(g[7].Value);
             float qy = float.Parse(g[8].Value);
             float qz = float.Parse(g[9].Value);
-            float qw = float.Parse(g[10].Value);
-            Quaternion rotation = new Quaternion(qx, qy, qz, qw);
+            Quaternion rotation = Quaternion.Euler(qx, qy, qz);
 
             placedThing.transform.position = location;
             placedThing.transform.localScale = scale;
