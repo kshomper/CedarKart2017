@@ -93,6 +93,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Sample UI\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\DropMe.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\LoadSceneOnClick.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Sample UI\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\Instantiate.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +184,9 @@
     <None Include="Assets\Resources\vehicles\van_red\van.mesh.xml" />
     <None Include="Assets\Resources\vehicles\van_silver\van.mesh.xml" />
     <None Include="Assets\Resources\vehicles\van_yellow\van.mesh.xml" />
+    <None Include="Assets\Sample UI\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\Sample UI\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\Sample UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
