@@ -43,6 +43,10 @@ public class GameplayController : MonoBehaviour
         {
             AddPoints(1000);
         }
+        else
+        {
+            //IDK
+        }
     }
 
     private void Die()

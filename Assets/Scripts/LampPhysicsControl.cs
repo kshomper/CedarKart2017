@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class LampPhysicsControl : MonoBehaviour {
         rb = this.GetComponent<Rigidbody>();
         col = this.GetComponent<Collider>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other != terrainCollider)
