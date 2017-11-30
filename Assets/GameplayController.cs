@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameplayController : MonoBehaviour
 {
-
     public int score = 0;
     public int lives = 3;
     public int scorePerSecond = 10;
@@ -17,8 +16,9 @@ public class GameplayController : MonoBehaviour
     private void Start()
     {
         addScore = true;
-        rigidbody = this.GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
     }
+
     private void Update()
     {
         if (Time.time >= nextUpdate && addScore)
@@ -42,6 +42,7 @@ public class GameplayController : MonoBehaviour
         else if (other.tag == "Checkpoint")
         {
             AddPoints(1000);
+            //Reset timer
         }
         else
         {
