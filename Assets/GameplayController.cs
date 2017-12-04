@@ -5,32 +5,18 @@ using UnityEngine;
 
 public class GameplayController : MonoBehaviour
 {
-
-    public int score = 0;
     public int lives = 3;
-    public int scorePerSecond = 10;
     public bool addScore;
     private int nextUpdate = 1;
-    private Rigidbody rigidbody;
+    private Rigidbody CarRigidbody;
+    private GameMaster mainController;
 
 
     private void Start()
     {
+        mainController = GameObject.Find("Master Gameplay Controller").GetComponent<GameMaster>();
         addScore = true;
-        rigidbody = this.GetComponent<Rigidbody>();
-    }
-    private void Update()
-    {
-        if (Time.time >= nextUpdate && addScore)
-        {
-            AddPoints(scorePerSecond);
-            nextUpdate = Mathf.FloorToInt(Time.time) + 1;
-        }
-    }
-
-    private void AddPoints(int scorePerSecond)
-    {
-        score += scorePerSecond;
+        CarRigidbody = GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +27,8 @@ public class GameplayController : MonoBehaviour
         }
         else if (other.tag == "Checkpoint")
         {
-            AddPoints(1000);
+            mainController.AddPoints(1000);
+            mainController.ResetTimer();
         }
         else
         {
@@ -55,10 +42,10 @@ public class GameplayController : MonoBehaviour
         
         if(lives <= 0)
         {
-            //do the game over action
+            mainController.GameOver();
         }
         this.transform.position = new Vector3(-92.92691f, 7.17f, -71.57132f);
-        rigidbody.velocity = new Vector3(0, 0, 0);
-        rigidbody.angularVelocity = new Vector3(0, 0, 0);
+        CarRigidbody.velocity = new Vector3(0, 0, 0);
+        CarRigidbody.angularVelocity = new Vector3(0, 0, 0);
     }
 }
