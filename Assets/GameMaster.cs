@@ -7,10 +7,12 @@ public class GameMaster : MonoBehaviour {
 
     private int nextUpdate = 1;
     public int score = 0;
-    public int scorePerSecond = 10;
+    public int scorePerSecond = 1;
     public float TimeBetween = 45f;
     public float timer;
     public bool CountTimerDown = true;
+	public GameObject gameOverScene;
+	public GameObject gameWinScene;
 
     private bool addScore;
 
@@ -37,6 +39,9 @@ public class GameMaster : MonoBehaviour {
     internal void AddPoints(int addScore)
     {
         score += addScore;
+		if(score == 200) {
+			GameWin();
+		}
     }
 
     internal void ResetTimer()
@@ -53,6 +58,10 @@ public class GameMaster : MonoBehaviour {
 
     internal void GameOver()
     {
-        throw new NotImplementedException();
+        gameOverScene.SetActive(true);
     }
+
+	internal void GameWin() {
+		gameWinScene.SetActive(true);
+	}
 }
