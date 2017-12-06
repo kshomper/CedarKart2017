@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class GameMaster : MonoBehaviour {
     public bool CountTimerDown = true;
 	public GameObject gameOverScene;
 	public GameObject gameWinScene;
+	public Text scoreText;
 
     private bool addScore;
 
@@ -40,6 +42,7 @@ public class GameMaster : MonoBehaviour {
     internal void AddPoints(int addScore)
     {
         score += addScore;
+		scoreText.text = "Score: " + score;
 		if(score == gameWinScore) {
 			GameWin();
 		}

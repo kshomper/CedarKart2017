@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayController : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class GameplayController : MonoBehaviour
     public bool addScore;
     private int nextUpdate = 1;
     private Rigidbody CarRigidbody;
-    private GameMaster mainController;
+    public GameMaster mainController;
+	public Text livesText;
 
 
     private void Start()
     {
-        mainController = GameObject.Find("Master Gameplay Controller").GetComponent<GameMaster>();
-        addScore = true;
+		livesText.text = "Lives: " + lives;
         CarRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -41,7 +42,8 @@ public class GameplayController : MonoBehaviour
     private void Die()
     {
         lives -= 1;
-        
+		livesText.text = "Lives: " + lives;
+
         if(lives <= 0)
         {
             mainController.GameOver();
