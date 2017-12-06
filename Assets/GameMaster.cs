@@ -7,8 +7,9 @@ public class GameMaster : MonoBehaviour {
 
     private int nextUpdate = 1;
     public int score = 0;
+	public int gameWinScore = 300;
     public int scorePerSecond = 1;
-    public float TimeBetween = 45f;
+    public float TimeBetween = 30f;
     public float timer;
     public bool CountTimerDown = true;
 	public GameObject gameOverScene;
@@ -23,7 +24,7 @@ public class GameMaster : MonoBehaviour {
     }
     
     void Update () {
-        if (timer < 0)
+        if (timer <= 0)
         {
             GameOver();
         }
@@ -39,7 +40,7 @@ public class GameMaster : MonoBehaviour {
     internal void AddPoints(int addScore)
     {
         score += addScore;
-		if(score == 200) {
+		if(score == gameWinScore) {
 			GameWin();
 		}
     }
@@ -48,11 +49,11 @@ public class GameMaster : MonoBehaviour {
     {
         if (CountTimerDown)
         {
-            if(TimeBetween > 10f)
+            if(TimeBetween > 5f)
             {
                 TimeBetween = TimeBetween - 5f;
             }
-            timer = TimeBetween;
+            timer += TimeBetween;
         }
     }
 

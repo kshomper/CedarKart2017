@@ -27,7 +27,9 @@ public class GameplayController : MonoBehaviour
         }
         else if (other.tag == "Checkpoint")
         {
-            mainController.AddPoints(20);
+			if(addScore) {
+	            mainController.AddPoints(20);
+			}
             mainController.ResetTimer();
         }
         else
