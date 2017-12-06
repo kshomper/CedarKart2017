@@ -16,6 +16,7 @@ public class GameMaster : MonoBehaviour {
 	public GameObject gameOverScene;
 	public GameObject gameWinScene;
 	public Text scoreText;
+    public Text timerText;
 
     private bool addScore;
 
@@ -36,7 +37,18 @@ public class GameMaster : MonoBehaviour {
             nextUpdate = Mathf.FloorToInt(Time.time) + 1;
         }
         timer -= Time.deltaTime;
-
+        timerText.text = "Timer: " + timer.ToString("0");
+        //could maybe be done better (don't really need to check every update)
+        if (timer < 10)
+        {
+            //red
+            timerText.color = new Color(1f, 0f, 0f);
+        }
+        else
+        {
+            //white
+            timerText.color = new Color(1f, 1f, 1f);
+        }
     }
 
     internal void AddPoints(int addScore)
