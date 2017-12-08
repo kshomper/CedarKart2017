@@ -7,14 +7,17 @@ using UnityEngine.UI;
 public class GameplayController : MonoBehaviour
 {
     private Rigidbody CarRigidbody;
-    public static GameMaster mainController;
-    private int lives = mainController.startLives;
-    private bool addScore = mainController.addScore;
-    private Text livesText = mainController.livesText;
+    public GameMaster mainController;
+    private int lives;
+    private bool addScore;
+    private Text livesText;
 
     private void Start()
     {
-		livesText.text = "Lives: " + lives;
+        lives = mainController.startLives;
+        addScore = mainController.addScore;
+        livesText = mainController.livesText;
+        livesText.text = "Lives: " + lives;
         CarRigidbody = GetComponent<Rigidbody>();
     }
 
