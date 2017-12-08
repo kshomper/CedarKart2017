@@ -198,13 +198,12 @@ namespace UnityStandardAssets.Vehicles.Car
                     break;
             }
             
-            float currentVelocity = m_Rigidbody.velocity.magnitude;
-            float speedRatio = currentVelocity / m_Topspeed;
+            float speedRatio = speed / m_Topspeed;
 
             Vector3 eulerVector = new Vector3(0, 0, -45 - 270 * speedRatio);
             speedometerNeedle.rotation = Quaternion.Euler(eulerVector);
 
-            speedText.text = currentVelocity.ToString("0");
+            speedText.text = speed.ToString("0");
         }
 
 

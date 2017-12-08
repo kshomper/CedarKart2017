@@ -5,25 +5,32 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
-
     private int nextUpdate = 1;
+    public int startLives = 3;
     public int score = 0;
-	public int gameWinScore = 300;
+	public int gameWinScore = 400;
     public int scorePerSecond = 1;
-    public float TimeBetween = 30f;
     public float timer;
-    public bool CountTimerDown = true;
 	public GameObject gameOverScene;
 	public GameObject gameWinScene;
 	public Text scoreText;
+    public Text livesText;
     public Text timerText;
-
-    private bool addScore;
+    public bool addScore;
+    public Vector3 respawnLocation = new Vector3(47.3f, 9.571f, -48.7f);
+    public Vector3 respawnVelocity = new Vector3(0, 0, 0);
+    public Vector3 respawnAngularVelocity = new Vector3(0, 0, 0);
+    public int startTime = 20;
+    public int maxAddTime = 5;
+    public int medAddTime = 11;
+    public int minAddTime = 17;
+    public int maxTime = 12;
+    public int minTime = 5;
+    public int checkPoints = 10;
 
     private void Start()
     {
-        addScore = true;
-        timer = TimeBetween;
+        timer = startTime;
     }
     
     void Update () {
@@ -38,15 +45,13 @@ public class GameMaster : MonoBehaviour {
         }
         timer -= Time.deltaTime;
         timerText.text = "Timer: " + timer.ToString("0");
-        //could maybe be done better (don't really need to check every update)
+
         if (timer < 10)
         {
-            //red
             timerText.color = new Color(1f, 0f, 0f);
         }
         else
         {
-            //white
             timerText.color = new Color(1f, 1f, 1f);
         }
     }
@@ -60,16 +65,9 @@ public class GameMaster : MonoBehaviour {
 		}
     }
 
-    internal void ResetTimer()
+    internal void AddTime(int t)
     {
-        if (CountTimerDown)
-        {
-            if(TimeBetween > 5f)
-            {
-                TimeBetween = TimeBetween - 5f;
-            }
-            timer += TimeBetween;
-        }
+        timer += t;
     }
 
     internal void GameOver()

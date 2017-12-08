@@ -6,13 +6,11 @@ using UnityEngine.UI;
 
 public class GameplayController : MonoBehaviour
 {
-    public int lives = 3;
-    public bool addScore;
-    private int nextUpdate = 1;
     private Rigidbody CarRigidbody;
-    public GameMaster mainController;
-	public Text livesText;
-
+    public static GameMaster mainController;
+    private int lives = mainController.startLives;
+    private bool addScore = mainController.addScore;
+    private Text livesText = mainController.livesText;
 
     private void Start()
     {
@@ -28,14 +26,19 @@ public class GameplayController : MonoBehaviour
         }
         else if (other.tag == "Checkpoint")
         {
+            if(mainController.timer > mainController.maxTime)
+            {
+                mainController.AddTime(mainController.maxAddTime);
+            } else if(mainController.timer < mainController.minTime)
+            {
+                mainController.AddTime(mainController.minAddTime);
+            } else
+            {
+                mainController.AddTime(mainController.medAddTime);
+            }
 			if(addScore) {
-	            mainController.AddPoints(20);
+	            mainController.AddPoints(mainController.checkPoints);
 			}
-            mainController.ResetTimer();
-        }
-        else
-        {
-            //IDK
         }
     }
 
@@ -48,8 +51,8 @@ public class GameplayController : MonoBehaviour
         {
             mainController.GameOver();
         }
-        this.transform.position = new Vector3(47.3f, 9.571f, -48.7f);
-        CarRigidbody.velocity = new Vector3(0, 0, 0);
-        CarRigidbody.angularVelocity = new Vector3(0, 0, 0);
+        this.transform.position = mainController.respawnLocation;
+        CarRigidbody.velocity = mainController.respawnVelocity;
+        CarRigidbody.angularVelocity = mainController.respawnAngularVelocity;
     }
 }
