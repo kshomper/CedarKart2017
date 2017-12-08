@@ -1,0 +1,2 @@
+Position: X: -297, Y: 0, Z: -275
+0 rotation, 1 scale

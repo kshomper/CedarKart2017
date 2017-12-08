@@ -16,7 +16,7 @@ public class Instantiate : MonoBehaviour
         for (int i = 0; i < placementFile.Length; i++)
         {
             string holder = placementFile[i];
-            string[] placement = holder.Split(',');
+            //string[] placement = holder.Split(',');
 
             // name, path, locationX, locationY, locationZ, scale, rotationX, rotationY, rotationZ, rotationW
             string pat = "\"?([^\"]+)\"?, ?\"?([^\"]+)\"?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?, ?([0-9.-]+)?";

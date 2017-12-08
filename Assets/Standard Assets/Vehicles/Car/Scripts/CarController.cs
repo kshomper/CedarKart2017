@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -55,6 +56,10 @@ namespace UnityStandardAssets.Vehicles.Car
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
 
+        public Text speedTypeText;
+        public Text speedText;
+        public RectTransform speedometerNeedle;
+
         // Use this for initialization
         private void Start()
         {
@@ -69,6 +74,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
             m_Rigidbody = GetComponent<Rigidbody>();
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
+
+            speedTypeText.text = m_SpeedType.ToString();
         }
 
 
@@ -190,6 +197,14 @@ namespace UnityStandardAssets.Vehicles.Car
                         m_Rigidbody.velocity = (m_Topspeed/3.6f) * m_Rigidbody.velocity.normalized;
                     break;
             }
+            
+            float currentVelocity = m_Rigidbody.velocity.magnitude;
+            float speedRatio = currentVelocity / m_Topspeed;
+
+            Vector3 eulerVector = new Vector3(0, 0, -45 - 270 * speedRatio);
+            speedometerNeedle.rotation = Quaternion.Euler(eulerVector);
+
+            speedText.text = currentVelocity.ToString("0");
         }
 
 
