@@ -49,7 +49,7 @@ public class GameplayController : MonoBehaviour
             mainController.GameOver();
         }
         this.transform.position = new Vector3(47.3f, 9.571f, -48.7f);
-        CarRigidbody.velocity = new Vector3(0, 0, 0);
-        CarRigidbody.angularVelocity = new Vector3(0, 0, 0);
+        //CarRigidbody.velocity = new Vector3(0, 0, 0);
+        //CarRigidbody.angularVelocity = new Vector3(0, 0, 0);
     }
 }
