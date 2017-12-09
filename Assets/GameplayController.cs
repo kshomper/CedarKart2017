@@ -54,14 +54,9 @@ public class GameplayController : MonoBehaviour
         {
             mainController.GameOver();
         }
-<<<<<<< HEAD
-        this.transform.position = new Vector3(47.3f, 9.571f, -48.7f);
-        //CarRigidbody.velocity = new Vector3(0, 0, 0);
-        //CarRigidbody.angularVelocity = new Vector3(0, 0, 0);
-=======
+
         this.transform.position = mainController.respawnLocation;
         CarRigidbody.velocity = mainController.respawnVelocity;
         CarRigidbody.angularVelocity = mainController.respawnAngularVelocity;
->>>>>>> 60739da1f785116f0341402dffdffdebc49bea13
     }
 }
