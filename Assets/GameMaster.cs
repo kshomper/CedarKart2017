@@ -72,10 +72,12 @@ public class GameMaster : MonoBehaviour {
 
     internal void GameOver()
     {
+		//put game over w/ lose sound here (get rid of all other sounds)
         gameOverScene.SetActive(true);
     }
 
 	internal void GameWin() {
+		//put applause w/ happy noise underneath (get rid of all other sounds)
 		gameWinScene.SetActive(true);
 	}
 }
