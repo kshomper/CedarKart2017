@@ -1,55 +1,51 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
-public class ufoNav : MonoBehaviour
-{
+public class ufoNav : MonoBehaviour {
 
+	private float distanceCar;
 	public Transform player;
-	public NavMeshAgent ufo;
 	public Transform[] points;
-	private int destPt;
+	private int destPoint = 0;
+	private NavMeshAgent ufo;
 
 
-	// Use this for initialization
-	void Start()
-	{
+	void Start () {
 		ufo = GetComponent<NavMeshAgent>();
-		///destPt = 0;
-		//ufo.autoBraking = false;
-		//GoToNextPt();
+		// Disabling auto-braking allows for continuous movement
+		// between points (ie, the agent doesn't slow down as it
+		// approaches a destination point).
+		ufo.autoBraking = false;
+		GotoNextPoint();
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-		//chase player if they are within xx distance of the current checkpoint (or ufo???)
-		//if player is within certian range (increase speed gradualy from 6(patrol) to 10(chase)
-		//if 
-		ufo.SetDestination(player.position);
-		//if (ufo.velocity.magnitude/ufo.speed < 10)
-		//{
-		//ufo.speed = ufo.speed + .1f;
-		//}
 
-		//else //continue patrol (make sure speed goes instantly back to 6). 
-		//ufo.speed = 6f;
-		//if (ufo.pathPending && ufo.remainingDistance < .5f)
-		//{
-			//GoToNextPt();
-		//}
+	void GotoNextPoint() {
+		// Returns if no points have been set up
+		if (points.Length == 0)
+			return;
 
+		// Set the agent to go to the currently selected destination.
+		ufo.destination = points[destPoint].position;
 
+		// Choose the next point in the array as the destination,
+		// cycling to the start if necessary.
+		destPoint = (destPoint + 1) % points.Length;
 	}
 
-	//Makes ufo head for next destination in its patrol
-	void GoToNextPt()
-	{
 
-		ufo.SetDestination(points[destPt].position);
-		destPt = (destPt + 1) % points.Length;
+	void Update () {
 
+		distanceCar = Vector3.Distance(ufo.transform.position, player.position);
+		//chase car if it's close
+		if(distanceCar < 50){
+			ufo.SetDestination (player.position);
+		}
+		// Choose the next destination point when the agent gets
+		// close to the current one.
+		else if (!ufo.pathPending && ufo.remainingDistance < 0.5f)
+			GotoNextPoint();
 	}
-}
+} 
 
