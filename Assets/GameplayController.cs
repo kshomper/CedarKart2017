@@ -2,35 +2,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayController : MonoBehaviour
 {
+    private Rigidbody CarRigidbody;
+    public GameMaster mainController;
+    public Respawn respawn;
+    int lives;
+    private bool addScore;
+    private Text livesText;
 
-    public int score = 0;
-    public int lives = 3;
-    public int scorePerSecond = 10;
-    public bool addScore;
-    private int nextUpdate = 1;
-    private Rigidbody rigidbody;
+    Animator anim;
 
-
-    private void Start()
+    public int Lives
     {
-        addScore = true;
-        rigidbody = this.GetComponent<Rigidbody>();
-    }
-    private void Update()
-    {
-        if (Time.time >= nextUpdate && addScore)
+        get
         {
-            AddPoints(scorePerSecond);
-            nextUpdate = Mathf.FloorToInt(Time.time) + 1;
+            return lives;
+        }
+
+        set
+        {
+            lives = value;
         }
     }
 
-    private void AddPoints(int scorePerSecond)
+    public Animator Anim
     {
-        score += scorePerSecond;
+        get
+        {
+            return anim;
+        }
+
+        set
+        {
+            anim = value;
+        }
+    }
+
+    private void Start()
+    {
+        Lives = mainController.startLives;
+        addScore = mainController.addScore;
+        livesText = mainController.livesText;
+        livesText.text = "Lives: " + Lives;
+        CarRigidbody = GetComponent<Rigidbody>();
+        Anim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,24 +59,26 @@ public class GameplayController : MonoBehaviour
         }
         else if (other.tag == "Checkpoint")
         {
-            AddPoints(1000);
-        }
-        else
-        {
-            //IDK
+            if(mainController.timer > mainController.maxTime)
+            {
+                mainController.AddTime(mainController.maxAddTime);
+            } else if(mainController.timer < mainController.minTime)
+            {
+                mainController.AddTime(mainController.minAddTime);
+            } else
+            {
+                mainController.AddTime(mainController.medAddTime);
+            }
+			if(addScore) {
+	            mainController.AddPoints(mainController.checkPoints);
+			}
         }
     }
 
     private void Die()
     {
-        lives -= 1;
-        
-        if(lives <= 0)
-        {
-            //do the game over action
-        }
-        this.transform.position = new Vector3(-92.92691f, 7.17f, -71.57132f);
-        rigidbody.velocity = new Vector3(0, 0, 0);
-        rigidbody.angularVelocity = new Vector3(0, 0, 0);
+        Lives -= 1;
+		livesText.text = "Lives: " + Lives;
+        respawn.RespawnPlayer();
     }
 }
