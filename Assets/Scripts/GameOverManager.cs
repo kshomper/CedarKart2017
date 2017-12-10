@@ -16,14 +16,16 @@ public class GameOverManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        fadeOutAnim = player.Anim;
-        fadeOutAnim.SetTrigger("FadeOut");
-
+        float endTimer = 2f;
         if (player != null && (player.Lives <= 0 || gm.timer <=0))
         {
+            endTimer -= Time.deltaTime;
+            fadeOutAnim = player.Anim;
             fadeOutAnim.SetTrigger("FadeOut");
-            //Destroy(player.gameObject, 2f);
-            //player.gameObject.SetActive(false);
+            if(endTimer < 0)
+            {
+                player.gameObject.SetActive(false);
+            }
             gameOverAnim.SetTrigger("GameOver");
         }
 	}
