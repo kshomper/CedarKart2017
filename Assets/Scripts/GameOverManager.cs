@@ -8,6 +8,7 @@ public class GameOverManager : MonoBehaviour {
     public GameplayController player;
     public GameMaster gm;
 
+    public Text gameOverText;
     public Text finalScoreText;
     public Text finalTimeText;
 
@@ -27,6 +28,18 @@ public class GameOverManager : MonoBehaviour {
 	void Update () {
         if (player.Lives <= 0 || gm.timer <=0)
         {
+            gameOverText.text = "You Lost";
+            gameOver();
+            gameIsOver = true;
+            endTimer -= Time.deltaTime;
+            if (endTimer < 0)
+            {
+                player.gameObject.SetActive(false);
+            }
+        }
+        else if (gm.score >= gm.gameWinScore)
+        {
+            gameOverText.text = "You Won!";
             gameOver();
             gameIsOver = true;
             endTimer -= Time.deltaTime;
