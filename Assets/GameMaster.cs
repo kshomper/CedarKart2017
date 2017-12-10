@@ -11,8 +11,6 @@ public class GameMaster : MonoBehaviour {
 	public int gameWinScore = 400;
     public int scorePerSecond = 1;
     public float timer;
-	public GameObject gameOverScene;
-	public GameObject gameWinScene;
 	public Text scoreText;
     public Text livesText;
     public Text timerText;
@@ -34,10 +32,6 @@ public class GameMaster : MonoBehaviour {
     }
     
     void Update () {
-        if (timer <= 0)
-        {
-            GameOver();
-        }
         if (Time.time >= nextUpdate && addScore)
         {
             AddPoints(scorePerSecond);
@@ -70,14 +64,8 @@ public class GameMaster : MonoBehaviour {
         timer += t;
     }
 
-    internal void GameOver()
-    {
-		//put game over w/ lose sound here (get rid of all other sounds)
-        gameOverScene.SetActive(true);
-    }
-
 	internal void GameWin() {
 		//put applause w/ happy noise underneath (get rid of all other sounds)
-		gameWinScene.SetActive(true);
+		//gameWinScene.SetActive(true);
 	}
 }
