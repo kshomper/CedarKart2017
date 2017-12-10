@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour {
 
-    Animator anim;
+    public Canvas PauseMenu;
     bool isPaused = false;
     // Use this for initialization
     void Start() {
-        anim = GetComponent<Animator>();
+        PauseMenu.gameObject.SetActive(false);
         Time.timeScale = 1.0f;
         Cursor.visible = false;
     }
@@ -28,15 +28,15 @@ public class PauseGame : MonoBehaviour {
         }
     }
 
-    void Pause()
+    public void Pause()
     {
+        OpenPauseMenu();
         Time.timeScale = 0.0f;
         Cursor.visible = true;
         isPaused = true;
-        OpenPauseMenu();
     }
 
-    void UnPause()
+    public void UnPause()
     {
         Time.timeScale = 1.0f;
         Cursor.visible = false;
@@ -46,11 +46,11 @@ public class PauseGame : MonoBehaviour {
 
     internal void OpenPauseMenu()
     {
-        anim.SetTrigger("Open");
+        PauseMenu.gameObject.SetActive(true);
     }
 
     internal void ClosePauseMenu()
     {
-        anim.SetTrigger("Close");
+        PauseMenu.gameObject.SetActive(false);
     }
 }

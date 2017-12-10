@@ -8,6 +8,7 @@ public class GameplayController : MonoBehaviour
 {
     private Rigidbody CarRigidbody;
     public GameMaster mainController;
+    public Respawn respawn;
     int lives;
     private bool addScore;
     private Text livesText;
@@ -78,8 +79,6 @@ public class GameplayController : MonoBehaviour
     {
         Lives -= 1;
 		livesText.text = "Lives: " + Lives;
-        transform.position = mainController.respawnLocation;
-        CarRigidbody.velocity = mainController.respawnVelocity;
-        CarRigidbody.angularVelocity = mainController.respawnAngularVelocity;
+        respawn.RespawnPlayer();
     }
 }
