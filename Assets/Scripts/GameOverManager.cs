@@ -57,6 +57,7 @@ public class GameOverManager : MonoBehaviour {
         {
             return;
         }
+        Cursor.visible = true;
         float finalScore = gm.score;
         finalScoreText.text = "Final Score: " + finalScore.ToString("0");
 

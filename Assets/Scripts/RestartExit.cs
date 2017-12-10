@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverButtonManager : MonoBehaviour {
-    public void restartGame()
+public class RestartExit : MonoBehaviour {
+    public PauseGame pg;
+
+    public void RestartGame()
     {
+        pg.UnPause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
-    public void exitToMenu()
+    public void ExitToMenu()
     {
+        pg.UnPause();
+        Cursor.visible = true;
         SceneManager.LoadScene("MainMenu");
     }
 }
