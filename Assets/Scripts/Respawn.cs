@@ -13,6 +13,14 @@ public class Respawn : MonoBehaviour
         CarRigidbody = Player.GetComponent<Rigidbody>();
     }
 
+    public void Update()
+    {
+        if(Input.GetKeyUp("r"))
+        {
+            RespawnPlayer();
+        }
+    }
+
     public void RespawnPlayer()
     {
         Player.transform.position = mainController.respawnLocation;
