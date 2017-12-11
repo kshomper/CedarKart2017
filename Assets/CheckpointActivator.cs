@@ -24,7 +24,7 @@ public class CheckpointActivator : MonoBehaviour {
         {
             active = true;
             checkCollider.enabled = true;
-            mat.SetColor("_EmissionColor", new Color(.227f, .227f, 0f));
+            mat.SetColor("_EmissionColor", new Color(.0266f, 0f, .227f));
         }
     }
 
