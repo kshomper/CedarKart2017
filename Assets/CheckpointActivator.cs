@@ -30,9 +30,12 @@ public class CheckpointActivator : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        triggerTime = Time.time;
-        active = false;
-        checkCollider.enabled = false;
-        mat.SetColor("_EmissionColor", new Color(.466f, .0f, 0f));
+        if (other.tag == "Player")
+        {
+            triggerTime = Time.time;
+            active = false;
+            checkCollider.enabled = false;
+            mat.SetColor("_EmissionColor", new Color(.466f, .0f, 0f));
+        }
     }
 }

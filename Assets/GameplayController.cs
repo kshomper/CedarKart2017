@@ -59,26 +59,30 @@ public class GameplayController : MonoBehaviour
         }
         else if (other.tag == "Checkpoint")
         {
-            if(mainController.timer > mainController.maxTime)
+            if (mainController.timer > mainController.maxTime)
             {
                 mainController.AddTime(mainController.maxAddTime);
-            } else if(mainController.timer < mainController.minTime)
+            }
+            else if (mainController.timer < mainController.minTime)
             {
                 mainController.AddTime(mainController.minAddTime);
-            } else
+            }
+            else
             {
                 mainController.AddTime(mainController.medAddTime);
             }
-			if(addScore) {
-	            mainController.AddPoints(mainController.checkPoints);
-			}
+
+            if (addScore)
+            {
+                mainController.AddPoints(mainController.checkPoints);
+            }
         }
     }
 
     private void Die()
     {
         Lives -= 1;
-		livesText.text = "Lives: " + Lives;
+        livesText.text = "Lives: " + Lives;
         respawn.RespawnPlayer();
     }
 }
